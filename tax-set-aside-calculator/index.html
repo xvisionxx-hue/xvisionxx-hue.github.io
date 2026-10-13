@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freelance Tax Set-Aside Calculator: How Much to Save</title>
+<meta name="description" content="Free freelance tax calculator: estimate what % of each client payment to set aside, a rough yearly self-employment + income tax total, and quarterly payments.">
+<link rel="canonical" href="https://xvisionxx-hue.github.io/tax-set-aside-calculator/">
+<meta property="og:site_name" content="XVisionary">
+<meta property="og:title" content="Freelance Tax Set-Aside Calculator: How Much to Save">
+<meta property="og:description" content="Free freelance tax calculator: estimate what % of each client payment to set aside, a rough yearly self-employment + income tax total, and quarterly payments.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xvisionxx-hue.github.io/tax-set-aside-calculator/">
+<meta property="og:image" content="https://xvisionxx-hue.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XVisionary: free freelance money tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f3a5f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EXV%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#1b2430;--muted:#545f6e;--line:#dde3ec;--accent:#1f3a5f;--accent2:#2459b8;--good:#136f4b;--soft:#eef3fb;--radius:14px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:var(--accent2)}a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:10}.skip:focus{left:8px;top:8px}
+.top{background:var(--accent);color:#fff}
+.top .in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:.01em}.brand:hover{color:#fff}
+.top nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 4px}
+.top nav a{color:#e6edf8;text-decoration:none;font-weight:600;font-size:.95rem;padding:6px 8px;border-radius:8px;display:inline-block}
+.top nav a:hover,.top nav a[aria-current=page]{background:rgba(255,255,255,.14);color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 40px}
+.crumbs{font-size:.85rem;color:var(--muted);margin:4px 0 0}.crumbs a{color:var(--muted)}
+header.page{padding:14px 0 4px}
+h1{font-size:1.7rem;line-height:1.2;margin:6px 0 10px;color:var(--accent)}
+h2{font-size:1.25rem;line-height:1.3;margin:28px 0 10px;color:var(--accent)}
+h3{font-size:1.05rem;margin:20px 0 6px}
+.card h2{margin-top:0;font-size:1.1rem}
+.sub{color:var(--muted);margin:0;font-size:1.05rem}
+.meta{color:var(--muted);font-size:.88rem;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:18px;box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.field{margin-bottom:16px}
+label{display:block;font-weight:600;margin-bottom:2px}
+.hint{display:block;font-size:.88rem;color:var(--muted);margin-bottom:6px}
+.opt{font-weight:400;color:var(--muted)}
+.inp{position:relative;display:flex;align-items:center}
+.inp span{position:absolute;color:var(--muted);font-weight:600;pointer-events:none}
+.inp .pre{left:12px}.inp .suf{right:12px}
+input[type=number]{width:100%;font-size:1.1rem;padding:12px 14px;border:1.5px solid #c9d2df;border-radius:10px;background:#fbfcfe;color:var(--ink);-moz-appearance:textfield;appearance:textfield}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input.has-pre{padding-left:28px}input.has-suf{padding-right:44px}
+input:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 0 3px rgba(36,89,184,.2)}
+input[aria-invalid=true]{border-color:#c62828}
+.err{color:#b71c1c;font-size:.88rem;min-height:1.2em;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr;gap:0}
+.results{display:grid;grid-template-columns:1fr;gap:12px}
+.res{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fbfcfe}
+.res .k{font-size:.9rem;color:var(--muted);font-weight:600}
+.res .v{font-size:1.85rem;font-weight:800;line-height:1.15;margin-top:2px;font-variant-numeric:tabular-nums}
+.res .n{font-size:.86rem;color:var(--muted);margin-top:2px}
+.res.main{border-color:var(--accent);background:var(--soft)}.res.main .v{color:var(--accent)}
+.res.g .v{color:var(--good)}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.92rem;color:var(--muted);margin-top:8px}
+.note b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl{overflow-x:auto;margin:12px 0}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--soft);color:var(--accent)}
+.breakdown td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.breakdown tr.total td{border-bottom:none;font-weight:800;color:var(--accent)}
+.explain{color:var(--muted)}.explain b{color:var(--ink)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f3f8;border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.92rem;line-height:1.45}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+p code,li code{background:#f0f3f8;padding:1px 5px;border-radius:5px}
+.reset{background:none;border:none;color:var(--accent2);font-size:.92rem;cursor:pointer;padding:4px 0;text-decoration:underline}
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.tile:hover{border-color:var(--accent2)}
+.tile b{display:block;color:var(--accent);font-size:1.05rem;margin-bottom:2px}
+.tile span{color:var(--muted);font-size:.93rem}
+ul.links{padding-left:20px;margin:8px 0}ul.links li{margin-bottom:6px}
+.callout{background:var(--soft);border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin:16px 0}
+.quiet{font-size:.92rem;color:var(--muted);margin-top:14px}
+.disclaimer{background:#eceff4;border-radius:10px;padding:12px 14px;font-size:.86rem;color:var(--muted);margin-top:18px}
+.faq h3{color:var(--ink)}
+article p,article li{max-width:68ch}
+footer.site{border-top:1px solid var(--line);margin-top:28px;background:#fff}
+footer.site .in{max-width:760px;margin:0 auto;padding:18px 16px 28px;font-size:.88rem;color:var(--muted)}
+footer.site ul{list-style:none;padding:0;margin:0 0 10px;display:flex;flex-wrap:wrap;gap:4px 16px}
+footer.site a{color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(min-width:600px){h1{font-size:2.05rem}.grid2{grid-template-columns:1fr 1fr;gap:16px}.results{grid-template-columns:1fr 1fr}.res.main{grid-column:1 / -1}.cards{grid-template-columns:1fr 1fr}.card{padding:22px}}
+@media print{.top,footer.site,.skip{display:none}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://xvisionxx-hue.github.io/#organization",
+   "name": "XVisionary",
+   "url": "https://xvisionxx-hue.github.io/",
+   "logo": "https://xvisionxx-hue.github.io/assets/xv-logo.png",
+   "sameAs": [
+    "https://xvisionary1.gumroad.com"
+   ]
+  },
+  {
+   "@type": "WebApplication",
+   "@id": "https://xvisionxx-hue.github.io/tax-set-aside-calculator/#app",
+   "name": "Freelance Tax Set-Aside Calculator",
+   "url": "https://xvisionxx-hue.github.io/tax-set-aside-calculator/",
+   "description": "Free freelance tax calculator: estimate what % of each client payment to set aside, a rough yearly self-employment + income tax total, and quarterly payments.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (runs in a web browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "inLanguage": "en",
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://xvisionxx-hue.github.io/#organization"
+   },
+   "dateModified": "2026-10-13"
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://xvisionxx-hue.github.io/tax-set-aside-calculator/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How much should a freelancer set aside for taxes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A common starting point is 25 to 30% of every payment. This calculator gives a rough personal estimate from your income, expenses, and tax rates, and rounds it up. Whatever number you use, saving it from every payment matters more than getting it exact on day one."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why is the result a percentage of gross payments?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Because that's what you see when a client pays you. The calculator works out tax on your profit, then divides it by your total income, so you can apply one percentage to every payment as it arrives without subtracting expenses each time."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is self-employment tax?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In the US, self-employed people pay Social Security and Medicare themselves. The calculator uses 2026 figures: 15.3% (12.4% + 2.9%) on 92.35% of net profit, starting at $400 of net earnings, with the Social Security part capped at a $184,500 wage base. These figures change; check irs.gov for the current year."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does this calculator leave out?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It skips the standard deduction, credits, other income and withholding, other deductions, and the extra 0.9% Medicare tax for high earners. It also applies one flat federal rate to all of your profit. For most people that leans high, which is the safer direction for savings, but it isn't a tax return."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When are 2026 federal estimated tax payments due?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "April 15, June 15, and September 15, 2026, and January 15, 2027 (for September to December income). Your state may have its own schedule. See IRS Form 1040-ES for details."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this work outside the US?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The self-employment tax part is US-only. The habit still works anywhere: pick a percentage, move it to a separate account every time you're paid, and confirm the right rate with a local tax professional."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://xvisionxx-hue.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Tax set-aside calculator",
+     "item": "https://xvisionxx-hue.github.io/tax-set-aside-calculator/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="in"><a class="brand" href="/">XVisionary</a><nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/#calculators" aria-current="page">Calculators</a></li><li><a href="/guides/">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=nav&utm_campaign=site_nav" rel="noopener">Shop</a></li></ul></nav></div></div>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb"><p class="crumbs"><a href="/">Home</a> › <span aria-current="page">Tax set-aside calculator</span></p></nav>
+<header class="page">
+<h1>Freelance Tax Set-Aside Calculator</h1>
+<p class="sub">How much of every client payment should you save for tax? Enter a few numbers to get a rough set-aside %, a yearly estimate, and a quarterly payment amount. US federal model, 2026 figures.</p>
+</header>
+
+<p class="disclaimer" style="margin-top:8px"><b>Rough estimate only. Not tax, legal, or financial advice.</b> It simplifies a lot (see "What does this calculator leave out?" below). Check IRS Form 1040-ES or a tax professional before you pay.</p>
+
+<section class="card" aria-labelledby="in-h">
+<h2 id="in-h">1. Your numbers</h2>
+<div class="field">
+<label for="inc">Expected freelance income this year</label>
+<span class="hint" id="inc-hint">Total you expect clients or platforms to pay you this year, before expenses.</span>
+<div class="inp"><span class="pre" aria-hidden="true">$</span><input id="inc" class="has-pre" type="number" inputmode="decimal" min="0" step="any" value="40000" aria-describedby="inc-hint e-inc"></div>
+<div class="err" id="e-inc"></div>
+</div>
+<div class="field">
+<label for="exp">Business expenses this year</label>
+<span class="hint" id="exp-hint">Software, equipment, fees, and similar costs. These lower the profit you're taxed on.</span>
+<div class="inp"><span class="pre" aria-hidden="true">$</span><input id="exp" class="has-pre" type="number" inputmode="decimal" min="0" step="any" value="4000" aria-describedby="exp-hint e-exp"></div>
+<div class="err" id="e-exp"></div>
+</div>
+<div class="grid2">
+<div class="field">
+<label for="fed">Rough federal income tax rate</label>
+<span class="hint" id="fed-hint">A rough planning rate. Not sure? Leave 12%.</span>
+<div class="inp"><input id="fed" class="has-suf" type="number" inputmode="decimal" min="0" max="50" step="any" value="12" aria-describedby="fed-hint e-fed"><span class="suf" aria-hidden="true">%</span></div>
+<div class="err" id="e-fed"></div>
+</div>
+<div class="field">
+<label for="st">State income tax rate</label>
+<span class="hint" id="st-hint">Use 0% if your state has no income tax.</span>
+<div class="inp"><input id="st" class="has-suf" type="number" inputmode="decimal" min="0" max="20" step="any" value="0" aria-describedby="st-hint e-st"><span class="suf" aria-hidden="true">%</span></div>
+<div class="err" id="e-st"></div>
+</div>
+</div>
+</section>
+
+<section class="card" aria-labelledby="out-h">
+<h2 id="out-h">2. Your set-aside</h2>
+<div class="results" aria-live="polite">
+<div class="res main"><div class="k">Save this % of every payment</div><div class="v" id="r-pct">—</div><div class="n" id="r-pct-n"></div></div>
+<div class="res"><div class="k">Estimated tax for the year</div><div class="v" id="r-total">—</div><div class="n">Self-employment + income tax (rough)</div></div>
+<div class="res g"><div class="k">Each quarterly payment</div><div class="v" id="r-q">—</div><div class="n">Yearly estimate ÷ 4</div></div>
+</div>
+<div class="tbl"><table class="breakdown">
+<caption class="vh">Breakdown of the yearly estimate</caption>
+<tr><td>Net profit (income − expenses)</td><td id="b-net">—</td></tr>
+<tr><td>Self-employment tax (15.3% on 92.35% of profit)</td><td id="b-se">—</td></tr>
+<tr><td>Federal income tax (rough, on profit − ½ SE tax)</td><td id="b-fed">—</td></tr>
+<tr><td>State income tax (rough, on profit)</td><td id="b-st">—</td></tr>
+<tr class="total"><td>Total estimate</td><td id="b-tot">—</td></tr>
+</table></div>
+</section>
+
+<section class="card" aria-labelledby="pay-h">
+<h2 id="pay-h">3. Quick check: one client payment</h2>
+<div class="field">
+<label for="pay">A payment you just got</label>
+<div class="inp"><span class="pre" aria-hidden="true">$</span><input id="pay" class="has-pre" type="number" inputmode="decimal" min="0" step="any" value="1200"></div>
+</div>
+<p class="explain" aria-live="polite">Move <b id="p-save">—</b> to your tax savings account. You can spend <b id="p-keep">—</b>.</p>
+</section>
+
+<section class="card" aria-labelledby="how-h">
+<h2 id="how-h">How this works</h2>
+<p class="explain">Self-employed people in the US pay <b>self-employment tax</b> (Social Security 12.4% + Medicare 2.9% = 15.3%) on 92.35% of their net profit, with the Social Security part capped at the 2026 wage base of $184,500. Regular income tax comes on top. Half of the SE tax is deductible, so the calculator applies your federal rate to profit minus half the SE tax, and your state rate to profit. The set-aside % is the total divided by your income, rounded up.</p>
+<p class="explain" id="worked"><b>Worked example (the default numbers, made up):</b> $40,000 of income − $4,000 of expenses = $36,000.00 profit. Self-employment tax: $36,000.00 × 92.35% × 15.3% = $5,086.64. Federal income tax at a rough 12%: ($36,000.00 − half the SE tax) × 12% = $4,014.80. State: $0. Total ≈ $9,101.44, which is 22.8% of $40,000, rounded up to <b>23%</b>. Quarterly payment ≈ $2,275.36. On a $1,200 payment, save $276.00 and you can spend $924.00.</p>
+<p class="explain">2026 federal estimated tax due dates (from IRS Form 1040-ES): April 15, June 15, and September 15, 2026, and January 15, 2027. The IRS generally expects quarterly payments if you'll owe $1,000 or more for the year. Your state may have its own schedule.</p>
+<p class="explain">These tax figures are for 2026 and change every year, so check irs.gov before relying on them. For the full habit (separate account, move it the day you're paid), read <a href="/guides/how-much-to-set-aside-for-taxes-freelance/">How much should freelancers set aside for taxes?</a></p>
+</section>
+
+<section class="card faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2>
+<h3>How much should a freelancer set aside for taxes?</h3><p>A common starting point is 25 to 30% of every payment. This calculator gives a rough personal estimate from your income, expenses, and tax rates, and rounds it up. Whatever number you use, saving it from every payment matters more than getting it exact on day one.</p>
+<h3>Why is the result a percentage of gross payments?</h3><p>Because that's what you see when a client pays you. The calculator works out tax on your profit, then divides it by your total income, so you can apply one percentage to every payment as it arrives without subtracting expenses each time.</p>
+<h3>What is self-employment tax?</h3><p>In the US, self-employed people pay Social Security and Medicare themselves. The calculator uses 2026 figures: 15.3% (12.4% + 2.9%) on 92.35% of net profit, starting at $400 of net earnings, with the Social Security part capped at a $184,500 wage base. These figures change; check irs.gov for the current year.</p>
+<h3>What does this calculator leave out?</h3><p>It skips the standard deduction, credits, other income and withholding, other deductions, and the extra 0.9% Medicare tax for high earners. It also applies one flat federal rate to all of your profit. For most people that leans high, which is the safer direction for savings, but it isn't a tax return.</p>
+<h3>When are 2026 federal estimated tax payments due?</h3><p>April 15, June 15, and September 15, 2026, and January 15, 2027 (for September to December income). Your state may have its own schedule. See IRS Form 1040-ES for details.</p>
+<h3>Does this work outside the US?</h3><p>The self-employment tax part is US-only. The habit still works anywhere: pick a percentage, move it to a separate account every time you're paid, and confirm the right rate with a local tax professional.</p>
+</section>
+
+<section class="card" aria-labelledby="next-h">
+<h2 id="next-h">Related free tools</h2>
+<ul class="links">
+<li><a href="/freelance-rate-calculator/">Freelance rate calculator</a>: build your tax set-aside into your hourly rate so you aren't underpricing.</li>
+<li><a href="https://xvisionary1.gumroad.com/l/free-tax-calculator?utm_source=xv_site&utm_medium=calculator&utm_campaign=tax_set_aside_calc">Offline copy of this calculator</a>: one HTML file you can keep (free, name your price).</li>
+<li><a href="https://xvisionary1.gumroad.com/l/avrcl?utm_source=xv_site&utm_medium=calculator&utm_campaign=tax_set_aside_calc">Freelance Rate Cheat Sheet</a>: the floor-rate formula on one printable page.</li>
+</ul>
+<p class="quiet">Want each payment logged and sorted into its IRS quarter? The paid <a href="https://xvisionary1.gumroad.com/l/tax-set-aside?utm_source=xv_site&utm_medium=calculator&utm_campaign=tax_set_aside_calc">Tax Set-Aside Tracker</a> is a spreadsheet that does that and flags money you haven't moved yet.</p>
+</section>
+
+<p class="disclaimer"><b>Not tax, legal, or financial advice.</b> This calculator is a planning tool. Tax rules and rates vary by location and situation, and pricing depends on your market and skills. Check with a qualified professional before making tax or financial decisions.</p>
+<p class="meta" style="margin-top:14px">Last updated Oct 13, 2026. Uses 2026 US federal figures.</p>
+
+</main>
+<footer class="site"><div class="in"><ul><li><a href="/freelance-rate-calculator/">Freelance floor-rate calculator</a></li><li><a href="/day-rate-calculator/">Day rate converter</a></li><li><a href="/tax-set-aside-calculator/">Tax set-aside calculator</a></li><li><a href="/guides/">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=footer&utm_campaign=site_footer" rel="noopener">Shop</a></li></ul><p>The calculators run entirely in your browser. Nothing you type is sent or saved anywhere. Everything here is for planning only and is not tax, legal, or financial advice.</p><p>© 2026 XVisionary</p></div></footer>
+<script>
+(function(){
+  function $(id){return document.getElementById(id);}
+  function fmt(n){return "$"+n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+  var WAGE_BASE=184500; // 2026 Social Security wage base
+  function num(id,max){
+    var el=$(id),v=parseFloat(el.value),e=$("e-"+id);
+    if(isNaN(v)||v<0||(max!==undefined&&v>max)){el.setAttribute("aria-invalid","true");e.textContent="Enter a number"+(max!==undefined?" from 0 to "+max:" of 0 or more")+".";return null;}
+    el.setAttribute("aria-invalid","false");e.textContent="";return v;
+  }
+  var outs=["r-pct","r-total","r-q","b-net","b-se","b-fed","b-st","b-tot","p-save","p-keep"];
+  function calc(){
+    var inc=num("inc"),exp=num("exp"),fed=num("fed",50),st=num("st",20);
+    if(inc===null||exp===null||fed===null||st===null){outs.forEach(function(i){$(i).textContent="—";});$("r-pct-n").textContent="";return;}
+    var net=Math.max(0,inc-exp),base=net*0.9235;
+    var se=base<400?0:Math.min(base,WAGE_BASE)*0.124+base*0.029;
+    var fedT=Math.max(0,net-se/2)*fed/100,stT=net*st/100,tot=se+fedT+stT;
+    var pct=inc>0?tot/inc*100:0,pctR=Math.ceil(pct);
+    $("r-pct").textContent=inc>0?pctR+"%":"—";
+    $("r-pct-n").textContent=inc>0?"Estimate is "+pct.toFixed(1)+"% of gross payments, rounded up":"";
+    $("r-total").textContent=fmt(tot);$("r-q").textContent=fmt(tot/4);
+    $("b-net").textContent=fmt(net);$("b-se").textContent=fmt(se);$("b-fed").textContent=fmt(fedT);$("b-st").textContent=fmt(stT);$("b-tot").textContent=fmt(tot);
+    var pay=parseFloat($("pay").value);if(isNaN(pay)||pay<0)pay=0;
+    var save=pay*pctR/100;$("p-save").textContent=fmt(save);$("p-keep").textContent=fmt(pay-save);
+  }
+  ["inc","exp","fed","st","pay"].forEach(function(id){$(id).addEventListener("input",calc);});
+  calc();
+})();
+</script>
+</body>
+</html>

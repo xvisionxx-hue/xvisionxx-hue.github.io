@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Your Freelance Hourly Rate (Formula)</title>
+<meta name="description" content="Use a simple floor-rate formula to calculate your freelance hourly rate: take-home goal, overhead, taxes, and billable hours. Worked example + free calculator.">
+<link rel="canonical" href="https://xvisionxx-hue.github.io/guides/how-to-calculate-freelance-hourly-rate/">
+<meta property="og:site_name" content="XVisionary">
+<meta property="og:title" content="How to Calculate Your Freelance Hourly Rate (Formula)">
+<meta property="og:description" content="Use a simple floor-rate formula to calculate your freelance hourly rate: take-home goal, overhead, taxes, and billable hours. Worked example + free calculator.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://xvisionxx-hue.github.io/guides/how-to-calculate-freelance-hourly-rate/">
+<meta property="og:image" content="https://xvisionxx-hue.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XVisionary: free freelance money tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f3a5f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EXV%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#1b2430;--muted:#545f6e;--line:#dde3ec;--accent:#1f3a5f;--accent2:#2459b8;--good:#136f4b;--soft:#eef3fb;--radius:14px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:var(--accent2)}a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:10}.skip:focus{left:8px;top:8px}
+.top{background:var(--accent);color:#fff}
+.top .in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:.01em}.brand:hover{color:#fff}
+.top nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 4px}
+.top nav a{color:#e6edf8;text-decoration:none;font-weight:600;font-size:.95rem;padding:6px 8px;border-radius:8px;display:inline-block}
+.top nav a:hover,.top nav a[aria-current=page]{background:rgba(255,255,255,.14);color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 40px}
+.crumbs{font-size:.85rem;color:var(--muted);margin:4px 0 0}.crumbs a{color:var(--muted)}
+header.page{padding:14px 0 4px}
+h1{font-size:1.7rem;line-height:1.2;margin:6px 0 10px;color:var(--accent)}
+h2{font-size:1.25rem;line-height:1.3;margin:28px 0 10px;color:var(--accent)}
+h3{font-size:1.05rem;margin:20px 0 6px}
+.card h2{margin-top:0;font-size:1.1rem}
+.sub{color:var(--muted);margin:0;font-size:1.05rem}
+.meta{color:var(--muted);font-size:.88rem;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:18px;box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.field{margin-bottom:16px}
+label{display:block;font-weight:600;margin-bottom:2px}
+.hint{display:block;font-size:.88rem;color:var(--muted);margin-bottom:6px}
+.opt{font-weight:400;color:var(--muted)}
+.inp{position:relative;display:flex;align-items:center}
+.inp span{position:absolute;color:var(--muted);font-weight:600;pointer-events:none}
+.inp .pre{left:12px}.inp .suf{right:12px}
+input[type=number]{width:100%;font-size:1.1rem;padding:12px 14px;border:1.5px solid #c9d2df;border-radius:10px;background:#fbfcfe;color:var(--ink);-moz-appearance:textfield;appearance:textfield}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input.has-pre{padding-left:28px}input.has-suf{padding-right:44px}
+input:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 0 3px rgba(36,89,184,.2)}
+input[aria-invalid=true]{border-color:#c62828}
+.err{color:#b71c1c;font-size:.88rem;min-height:1.2em;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr;gap:0}
+.results{display:grid;grid-template-columns:1fr;gap:12px}
+.res{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fbfcfe}
+.res .k{font-size:.9rem;color:var(--muted);font-weight:600}
+.res .v{font-size:1.85rem;font-weight:800;line-height:1.15;margin-top:2px;font-variant-numeric:tabular-nums}
+.res .n{font-size:.86rem;color:var(--muted);margin-top:2px}
+.res.main{border-color:var(--accent);background:var(--soft)}.res.main .v{color:var(--accent)}
+.res.g .v{color:var(--good)}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.92rem;color:var(--muted);margin-top:8px}
+.note b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl{overflow-x:auto;margin:12px 0}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--soft);color:var(--accent)}
+.breakdown td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.breakdown tr.total td{border-bottom:none;font-weight:800;color:var(--accent)}
+.explain{color:var(--muted)}.explain b{color:var(--ink)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f3f8;border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.92rem;line-height:1.45}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+p code,li code{background:#f0f3f8;padding:1px 5px;border-radius:5px}
+.reset{background:none;border:none;color:var(--accent2);font-size:.92rem;cursor:pointer;padding:4px 0;text-decoration:underline}
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.tile:hover{border-color:var(--accent2)}
+.tile b{display:block;color:var(--accent);font-size:1.05rem;margin-bottom:2px}
+.tile span{color:var(--muted);font-size:.93rem}
+ul.links{padding-left:20px;margin:8px 0}ul.links li{margin-bottom:6px}
+.callout{background:var(--soft);border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin:16px 0}
+.quiet{font-size:.92rem;color:var(--muted);margin-top:14px}
+.disclaimer{background:#eceff4;border-radius:10px;padding:12px 14px;font-size:.86rem;color:var(--muted);margin-top:18px}
+.faq h3{color:var(--ink)}
+article p,article li{max-width:68ch}
+footer.site{border-top:1px solid var(--line);margin-top:28px;background:#fff}
+footer.site .in{max-width:760px;margin:0 auto;padding:18px 16px 28px;font-size:.88rem;color:var(--muted)}
+footer.site ul{list-style:none;padding:0;margin:0 0 10px;display:flex;flex-wrap:wrap;gap:4px 16px}
+footer.site a{color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(min-width:600px){h1{font-size:2.05rem}.grid2{grid-template-columns:1fr 1fr;gap:16px}.results{grid-template-columns:1fr 1fr}.res.main{grid-column:1 / -1}.cards{grid-template-columns:1fr 1fr}.card{padding:22px}}
+@media print{.top,footer.site,.skip{display:none}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://xvisionxx-hue.github.io/#organization",
+   "name": "XVisionary",
+   "url": "https://xvisionxx-hue.github.io/",
+   "logo": "https://xvisionxx-hue.github.io/assets/xv-logo.png",
+   "sameAs": [
+    "https://xvisionary1.gumroad.com"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://xvisionxx-hue.github.io/guides/how-to-calculate-freelance-hourly-rate/#article",
+   "headline": "How to Calculate Your Freelance Hourly Rate: A Simple Floor-Rate Formula",
+   "description": "Use a simple floor-rate formula to calculate your freelance hourly rate: take-home goal, overhead, taxes, and billable hours. Worked example + free calculator.",
+   "url": "https://xvisionxx-hue.github.io/guides/how-to-calculate-freelance-hourly-rate/",
+   "mainEntityOfPage": "https://xvisionxx-hue.github.io/guides/how-to-calculate-freelance-hourly-rate/",
+   "datePublished": "2026-10-13",
+   "dateModified": "2026-10-13",
+   "inLanguage": "en",
+   "image": "https://xvisionxx-hue.github.io/assets/og-image.png",
+   "author": {
+    "@id": "https://xvisionxx-hue.github.io/#organization"
+   },
+   "publisher": {
+    "@id": "https://xvisionxx-hue.github.io/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://xvisionxx-hue.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://xvisionxx-hue.github.io/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to calculate your freelance hourly rate",
+     "item": "https://xvisionxx-hue.github.io/guides/how-to-calculate-freelance-hourly-rate/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://xvisionxx-hue.github.io/guides/how-to-calculate-freelance-hourly-rate/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I calculate my freelance hourly rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Divide your monthly take-home goal by (1 − your tax %) to get pay before tax, add your monthly business costs, then divide by the hours you can realistically bill each month. That gives your floor rate, the minimum you should charge. Most freelancers then quote above the floor (for example, floor × 1.3) to cover slow months."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a good hourly rate for a beginner freelancer?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There isn't one number that fits everyone, because it depends on your costs, your location, and your field. A better question is \"what's the lowest rate that covers my bills, taxes, and pay?\" Work out that floor rate first, then check what clients in your niche pay and price at or above your floor."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many billable hours does a freelancer have per month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Usually far fewer than the hours you work. Client hunting, admin, and invoicing aren't billable. If you have no data yet, planning on roughly 50 to 80 billable hours a month is a cautious starting point. Track your real hours for a few months and update the number."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I include taxes in my freelance rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Nobody withholds tax from freelance payments, so if your rate doesn't include a tax set-aside, you're effectively charging less than you think. The formula above grosses up your take-home for tax before adding costs and dividing by billable hours. Confirm the right percentage for you with a tax professional."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I charge hourly or by the project?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Either can work. Even if you quote per project, it helps to know your floor rate: estimate the hours, multiply by your target rate, and make sure the project price stays above your floor once revisions and admin are included."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="in"><a class="brand" href="/">XVisionary</a><nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=nav&utm_campaign=site_nav" rel="noopener">Shop</a></li></ul></nav></div></div>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb"><p class="crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a> › <span aria-current="page">How to calculate your freelance hourly rate</span></p></nav>
+<article>
+<header class="page">
+<h1>How to Calculate Your Freelance Hourly Rate: A Simple Floor-Rate Formula</h1>
+<p class="meta">By XVisionary · Updated Oct 13, 2026 · About 5 min read</p>
+</header>
+<p class="callout"><a href="/freelance-rate-calculator/"><b>Free freelance rate calculator</b></a>: it does this math as you type.</p>
+<p>The fastest way to set a <b>freelance hourly rate</b> you won't regret is to start from your own numbers, not from what other freelancers charge. This guide shows how to calculate your freelance hourly rate with a four-number formula, walks through a worked example, and ends with a quick checklist you can run before your next quote.</p>
+<p>Most new freelancers pick a rate by looking around, then knocking a bit off to feel safe. The trouble is that other people's rates don't know your rent, your software bills, or how many hours you can actually bill in a month.</p>
+<h2 id="what-is-a-freelance-floor-rate">What is a freelance floor rate?</h2>
+<p>Your <b>floor rate</b> is the lowest hourly rate where your bills, your take-home pay, and your tax set-aside are all covered. You can charge more than your floor (you usually should), but quoting below it means you're working at a loss.</p>
+<p>Think of it as your minimum hourly rate as a freelancer: the line you don't go under.</p>
+<h2 id="the-freelance-hourly-rate-formula">The freelance hourly rate formula</h2>
+<p>You need four numbers:</p>
+<ol><li><b>Monthly take-home goal</b>: what you want to pay yourself each month, after tax and business costs.</li><li><b>Monthly business costs (overhead)</b>: software, equipment, internet, fees, and anything else the business pays for.</li><li><b>Tax set-aside percentage</b>: the rough share of your profit that goes to tax. Many freelancers start somewhere around 25 to 30 percent, but your own number depends on where you live and your situation, so check with a tax professional.</li><li><b>Billable hours per month</b>: hours you can actually charge for, not the hours you work. Admin, marketing, and invoicing don't count.</li></ol>
+<p>Then:</p>
+<pre><code>Pay before tax = Take-home goal ÷ (1 − Tax %)
+Floor rate     = (Pay before tax + Business costs) ÷ Billable hours</code></pre>
+<p>Dividing by (1 − tax %) "grosses up" your take-home: it finds the pre-tax pay that still leaves your goal once tax comes out. Business costs are added after that, not grossed up, because they're deductible and come off before tax. (This is a planning shortcut, not how your actual tax bill is calculated. It just makes sure the rate has room for tax built in.)</p>
+<h2 id="worked-example-calculating-a-freelance-hourly-rate">Worked example: calculating a freelance hourly rate</h2>
+<p>Here's a made-up example to show the math. Maya is a freelance designer. She wants to take home $3,000 a month, her business costs are $400, she plans on 25 percent for tax, and she can realistically bill 60 hours a month.</p>
+<ul><li>Pay before tax: $3,000 ÷ (1 − 0.25) = <b>$4,000</b></li><li>Add business costs: $4,000 + $400 = <b>$4,400</b> a month</li><li>Floor rate: $4,400 ÷ 60 = <b>$73.33 an hour</b></li></ul>
+<p>Check: $4,400 − $400 of costs leaves $4,000 of profit. 25 percent tax on that is $1,000, which leaves exactly the $3,000 she wanted.</p>
+<p>So about $73 an hour is the lowest Maya can quote without falling short. If she'd guessed $45 because "that's what beginners charge," she'd come up short every month without knowing why.</p>
+<h3 id="a-common-mistake-multiplying-instead-of-dividing">A common mistake: multiplying instead of dividing</h3>
+<p>A tempting shortcut is to add up take-home plus costs and multiply by the tax percentage: ($3,000 + $400) × 0.25 = $850, for a floor of $70.83. That undershoots. Tax comes out of your pre-tax pay, so 25 percent of a $3,000 goal isn't enough; you need 25 percent of the bigger pre-tax number. Dividing by (1 − tax %) fixes that.</p>
+<h2 id="from-floor-rate-to-the-rate-you-actually-quote">From floor rate to the rate you actually quote</h2>
+<p>Your floor isn't your price. Two simple rules of thumb for a target rate:</p>
+<ul><li><b>Floor × 1.3</b> gives a healthier target that leaves room for slow months and unpaid revisions. For Maya, that's about $95 an hour.</li><li><b>Floor × 1.5</b> is a stronger target once you have a portfolio or repeat clients. For Maya, $110 an hour.</li></ul>
+<p>These multipliers are starting points, not rules. Your market, your skills, and what clients in your niche will pay all matter too.</p>
+<h2 id="how-many-billable-hours-should-a-freelancer-plan-for">How many billable hours should a freelancer plan for?</h2>
+<p>The number people get wrong most often is billable hours. A 40-hour week is not 160 billable hours a month. Between finding clients, emails, invoicing, and gaps between projects, many freelancers bill far less than they work.</p>
+<p>If you're not sure, start low (say 50 to 80 billable hours a month) and adjust once you've tracked a few months. A lower billable-hours number pushes your floor rate up, which is usually closer to reality.</p>
+<h2 id="checklist-before-your-next-quote">Checklist before your next quote</h2>
+<ul><li>I know my monthly take-home goal.</li><li>I've added up my real monthly business costs.</li><li>I've picked a tax set-aside percentage and checked it's reasonable for me.</li><li>I've been honest about billable hours.</li><li>My quote is at or above my floor rate.</li></ul>
+<h2 id="freelance-hourly-rate-faq">Freelance hourly rate FAQ</h2>
+<h3 id="how-do-i-calculate-my-freelance-hourly-rate">How do I calculate my freelance hourly rate?</h3>
+<p>Divide your monthly take-home goal by (1 − your tax %) to get pay before tax, add your monthly business costs, then divide by the hours you can realistically bill each month. That gives your floor rate, the minimum you should charge. Most freelancers then quote above the floor (for example, floor × 1.3) to cover slow months.</p>
+<h3 id="what-is-a-good-hourly-rate-for-a-beginner-freelancer">What is a good hourly rate for a beginner freelancer?</h3>
+<p>There isn't one number that fits everyone, because it depends on your costs, your location, and your field. A better question is "what's the lowest rate that covers my bills, taxes, and pay?" Work out that floor rate first, then check what clients in your niche pay and price at or above your floor.</p>
+<h3 id="how-many-billable-hours-does-a-freelancer-have-per-month">How many billable hours does a freelancer have per month?</h3>
+<p>Usually far fewer than the hours you work. Client hunting, admin, and invoicing aren't billable. If you have no data yet, planning on roughly 50 to 80 billable hours a month is a cautious starting point. Track your real hours for a few months and update the number.</p>
+<h3 id="should-i-include-taxes-in-my-freelance-rate">Should I include taxes in my freelance rate?</h3>
+<p>Yes. Nobody withholds tax from freelance payments, so if your rate doesn't include a tax set-aside, you're effectively charging less than you think. The formula above grosses up your take-home for tax before adding costs and dividing by billable hours. Confirm the right percentage for you with a tax professional.</p>
+<h3 id="should-i-charge-hourly-or-by-the-project">Should I charge hourly or by the project?</h3>
+<p>Either can work. Even if you quote per project, it helps to know your floor rate: estimate the hours, multiply by your target rate, and make sure the project price stays above your floor once revisions and admin are included.</p>
+<section class="card" aria-labelledby="tools-h">
+<h2 id="tools-h">Free tools for this</h2>
+<ul class="links">
+<li><a href="/freelance-rate-calculator/">Free freelance rate calculator</a>: runs in your browser, nothing to download.</li>
+<li><a href="https://xvisionary1.gumroad.com/l/avrcl?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_floor_rate">Freelance Rate Cheat Sheet</a>: the same formula and example on one printable page.</li>
+</ul>
+<p class="quiet">Prefer it ready-made? The paid <a href="https://xvisionary1.gumroad.com/l/rwowde?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_floor_rate">Rate &amp; Quote Calculator</a> is a spreadsheet version that adds day, week, and retainer pricing and a client quote.</p>
+</section>
+<p class="disclaimer">This guide is general information, not tax, legal, or financial advice. Pricing depends on your market and skills, and tax and payment rules vary by location and situation. Talk to a qualified professional about your own situation. Examples use made-up numbers.</p>
+<nav aria-labelledby="rel-h"><h2 id="rel-h">Related guides</h2><ul class="links"><li><a href="/guides/day-rate-vs-hourly-rate-freelancers/">Day rate vs hourly rate</a></li><li><a href="/guides/how-much-to-set-aside-for-taxes-freelance/">How much to set aside for taxes</a></li><li><a href="/guides/freelance-invoice-tracker-spreadsheet/">How to track freelance invoices</a></li></ul></nav>
+</article>
+
+</main>
+<footer class="site"><div class="in"><ul><li><a href="/freelance-rate-calculator/">Freelance floor-rate calculator</a></li><li><a href="/day-rate-calculator/">Day rate converter</a></li><li><a href="/tax-set-aside-calculator/">Tax set-aside calculator</a></li><li><a href="/guides/">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=footer&utm_campaign=site_footer" rel="noopener">Shop</a></li></ul><p>The calculators run entirely in your browser. Nothing you type is sent or saved anywhere. Everything here is for planning only and is not tax, legal, or financial advice.</p><p>© 2026 XVisionary</p></div></footer>
+
+</body>
+</html>

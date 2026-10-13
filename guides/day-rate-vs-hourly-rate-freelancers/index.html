@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day Rate vs Hourly Rate for Freelancers: How to Convert</title>
+<meta name="description" content="Convert your freelance hourly rate to a day rate with a simple formula, a billable-hours caveat, a worked example, and when day rates beat hourly billing.">
+<link rel="canonical" href="https://xvisionxx-hue.github.io/guides/day-rate-vs-hourly-rate-freelancers/">
+<meta property="og:site_name" content="XVisionary">
+<meta property="og:title" content="Day Rate vs Hourly Rate for Freelancers: How to Convert">
+<meta property="og:description" content="Convert your freelance hourly rate to a day rate with a simple formula, a billable-hours caveat, a worked example, and when day rates beat hourly billing.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://xvisionxx-hue.github.io/guides/day-rate-vs-hourly-rate-freelancers/">
+<meta property="og:image" content="https://xvisionxx-hue.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XVisionary: free freelance money tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f3a5f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EXV%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#1b2430;--muted:#545f6e;--line:#dde3ec;--accent:#1f3a5f;--accent2:#2459b8;--good:#136f4b;--soft:#eef3fb;--radius:14px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:var(--accent2)}a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:10}.skip:focus{left:8px;top:8px}
+.top{background:var(--accent);color:#fff}
+.top .in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:.01em}.brand:hover{color:#fff}
+.top nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 4px}
+.top nav a{color:#e6edf8;text-decoration:none;font-weight:600;font-size:.95rem;padding:6px 8px;border-radius:8px;display:inline-block}
+.top nav a:hover,.top nav a[aria-current=page]{background:rgba(255,255,255,.14);color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 40px}
+.crumbs{font-size:.85rem;color:var(--muted);margin:4px 0 0}.crumbs a{color:var(--muted)}
+header.page{padding:14px 0 4px}
+h1{font-size:1.7rem;line-height:1.2;margin:6px 0 10px;color:var(--accent)}
+h2{font-size:1.25rem;line-height:1.3;margin:28px 0 10px;color:var(--accent)}
+h3{font-size:1.05rem;margin:20px 0 6px}
+.card h2{margin-top:0;font-size:1.1rem}
+.sub{color:var(--muted);margin:0;font-size:1.05rem}
+.meta{color:var(--muted);font-size:.88rem;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:18px;box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.field{margin-bottom:16px}
+label{display:block;font-weight:600;margin-bottom:2px}
+.hint{display:block;font-size:.88rem;color:var(--muted);margin-bottom:6px}
+.opt{font-weight:400;color:var(--muted)}
+.inp{position:relative;display:flex;align-items:center}
+.inp span{position:absolute;color:var(--muted);font-weight:600;pointer-events:none}
+.inp .pre{left:12px}.inp .suf{right:12px}
+input[type=number]{width:100%;font-size:1.1rem;padding:12px 14px;border:1.5px solid #c9d2df;border-radius:10px;background:#fbfcfe;color:var(--ink);-moz-appearance:textfield;appearance:textfield}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input.has-pre{padding-left:28px}input.has-suf{padding-right:44px}
+input:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 0 3px rgba(36,89,184,.2)}
+input[aria-invalid=true]{border-color:#c62828}
+.err{color:#b71c1c;font-size:.88rem;min-height:1.2em;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr;gap:0}
+.results{display:grid;grid-template-columns:1fr;gap:12px}
+.res{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fbfcfe}
+.res .k{font-size:.9rem;color:var(--muted);font-weight:600}
+.res .v{font-size:1.85rem;font-weight:800;line-height:1.15;margin-top:2px;font-variant-numeric:tabular-nums}
+.res .n{font-size:.86rem;color:var(--muted);margin-top:2px}
+.res.main{border-color:var(--accent);background:var(--soft)}.res.main .v{color:var(--accent)}
+.res.g .v{color:var(--good)}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.92rem;color:var(--muted);margin-top:8px}
+.note b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl{overflow-x:auto;margin:12px 0}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--soft);color:var(--accent)}
+.breakdown td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.breakdown tr.total td{border-bottom:none;font-weight:800;color:var(--accent)}
+.explain{color:var(--muted)}.explain b{color:var(--ink)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f3f8;border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.92rem;line-height:1.45}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+p code,li code{background:#f0f3f8;padding:1px 5px;border-radius:5px}
+.reset{background:none;border:none;color:var(--accent2);font-size:.92rem;cursor:pointer;padding:4px 0;text-decoration:underline}
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.tile:hover{border-color:var(--accent2)}
+.tile b{display:block;color:var(--accent);font-size:1.05rem;margin-bottom:2px}
+.tile span{color:var(--muted);font-size:.93rem}
+ul.links{padding-left:20px;margin:8px 0}ul.links li{margin-bottom:6px}
+.callout{background:var(--soft);border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin:16px 0}
+.quiet{font-size:.92rem;color:var(--muted);margin-top:14px}
+.disclaimer{background:#eceff4;border-radius:10px;padding:12px 14px;font-size:.86rem;color:var(--muted);margin-top:18px}
+.faq h3{color:var(--ink)}
+article p,article li{max-width:68ch}
+footer.site{border-top:1px solid var(--line);margin-top:28px;background:#fff}
+footer.site .in{max-width:760px;margin:0 auto;padding:18px 16px 28px;font-size:.88rem;color:var(--muted)}
+footer.site ul{list-style:none;padding:0;margin:0 0 10px;display:flex;flex-wrap:wrap;gap:4px 16px}
+footer.site a{color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(min-width:600px){h1{font-size:2.05rem}.grid2{grid-template-columns:1fr 1fr;gap:16px}.results{grid-template-columns:1fr 1fr}.res.main{grid-column:1 / -1}.cards{grid-template-columns:1fr 1fr}.card{padding:22px}}
+@media print{.top,footer.site,.skip{display:none}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://xvisionxx-hue.github.io/#organization",
+   "name": "XVisionary",
+   "url": "https://xvisionxx-hue.github.io/",
+   "logo": "https://xvisionxx-hue.github.io/assets/xv-logo.png",
+   "sameAs": [
+    "https://xvisionary1.gumroad.com"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://xvisionxx-hue.github.io/guides/day-rate-vs-hourly-rate-freelancers/#article",
+   "headline": "Day Rate vs Hourly Rate for Freelancers: How to Convert",
+   "description": "Convert your freelance hourly rate to a day rate with a simple formula, a billable-hours caveat, a worked example, and when day rates beat hourly billing.",
+   "url": "https://xvisionxx-hue.github.io/guides/day-rate-vs-hourly-rate-freelancers/",
+   "mainEntityOfPage": "https://xvisionxx-hue.github.io/guides/day-rate-vs-hourly-rate-freelancers/",
+   "datePublished": "2026-10-13",
+   "dateModified": "2026-10-13",
+   "inLanguage": "en",
+   "image": "https://xvisionxx-hue.github.io/assets/og-image.png",
+   "author": {
+    "@id": "https://xvisionxx-hue.github.io/#organization"
+   },
+   "publisher": {
+    "@id": "https://xvisionxx-hue.github.io/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://xvisionxx-hue.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://xvisionxx-hue.github.io/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Day rate vs hourly rate",
+     "item": "https://xvisionxx-hue.github.io/guides/day-rate-vs-hourly-rate-freelancers/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://xvisionxx-hue.github.io/guides/day-rate-vs-hourly-rate-freelancers/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I convert an hourly rate to a day rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Multiply your hourly rate by the number of hours you can realistically bill in a day (often 5–7, not always 8). That product is your starting day rate. Adjust for half-days, on-site costs, and multi-day blocks as needed."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many hours are in a freelance day rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Whatever you can honestly bill. Many freelancers plan on about 6 billable hours in an 8-hour workday. Use your own tracked average when you have it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is a day rate better than hourly for freelancers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on the work. Day rates suit full-day bookings and clients who want a simple daily number. Hourly suits short or uneven work. Lots of freelancers offer both."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should my day rate include taxes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Indirectly, yes. Build taxes (and overhead) into your hourly floor first, then convert. A day rate converted from an hourly number that ignored taxes will undercharge every day. This is general planning info, not tax advice; check your own situation with a tax professional."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What if a client asks for a weekly rate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Start from your day rate × the number of days you're actually committing that week. Only discount if the block is worth it for cash flow and scheduling, and never below your floor."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="in"><a class="brand" href="/">XVisionary</a><nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=nav&utm_campaign=site_nav" rel="noopener">Shop</a></li></ul></nav></div></div>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb"><p class="crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a> › <span aria-current="page">Day rate vs hourly rate</span></p></nav>
+<article>
+<header class="page">
+<h1>Day Rate vs Hourly Rate for Freelancers: How to Convert</h1>
+<p class="meta">By XVisionary · Updated Oct 13, 2026 · About 6 min read</p>
+</header>
+<p class="callout"><a href="/day-rate-calculator/"><b>Free day rate calculator</b></a>: convert hourly ↔ day rate in your browser.</p>
+<p>If you already know your <b>freelance hourly rate</b>, the next question is usually whether to bill by the hour or by the day. This guide shows how a <b>freelance day rate calculator</b> works in plain math: convert hourly to daily using the hours you really bill, walk through a worked example, and decide when a day rate is the better quote.</p>
+<p>A lot of freelancers pick one and stick with it forever. Hourly feels precise. Day rate feels simpler for longer gigs. Both can work, as long as the day rate is built from a floor you trust, not from a round number that "sounds right."</p>
+<h2 id="what-is-a-freelance-day-rate">What is a freelance day rate?</h2>
+<p>A <b>freelance day rate</b> is a flat price for one working day of your time. Clients pay for the day (or half-day), not for every 15-minute block. You still need an hourly floor underneath it; the day rate is just how you package that floor for the client.</p>
+<p>Day rates show up a lot in consulting, design retainers, on-site work, production days, and any project where the client wants a clean daily number instead of a timesheet.</p>
+<h2 id="when-freelancers-use-a-day-rate">When freelancers use a day rate</h2>
+<p>Day rates tend to fit when:</p>
+<ul><li>The work fills most of a day (workshops, shoots, on-site support, deep focus blocks).</li><li>The client wants predictable cost per day, not variable hours.</li><li>You're booking several days in a row and hourly tracking would be noisy for everyone.</li><li>Scope is clearer by "days of effort" than by a long list of tasks.</li></ul>
+<p>Hourly still fits better for short calls, open-ended support, or work that arrives in small, uneven chunks. Many freelancers keep both: day rate for booked days, hourly for everything else.</p>
+<h2 id="the-simple-conversion-formula">The simple conversion formula</h2>
+<p>Start from an hourly rate you already trust (ideally your floor or target from a proper rate formula). Then:</p>
+<pre><code>Day rate = Hourly rate × Billable hours per day</code></pre>
+<p>That looks obvious. The part people miss is <b>billable hours per day</b>.</p>
+<p>A workday is rarely 8 billable hours. Email, setup, switching between tasks, and admin all take time you can't bill. If you multiply your hourly rate by 8, you're assuming every hour of the day is billable, which overstates your billable time. Use the hours you really bill instead.</p>
+<p>A realistic starting point for many freelancers is <b>5 to 7 billable hours per day</b>, depending on the work:</p>
+<div class="tbl"><table><thead><tr><th scope="col">Work style</th><th scope="col">Billable hours / day (starting point)</th></tr></thead><tbody><tr><td>Deep focus / uninterrupted client work</td><td>6–7</td></tr><tr><td>Mixed client work + light admin</td><td>5–6</td></tr><tr><td>On-site, meetings-heavy, or creative production</td><td>5–6</td></tr><tr><td>Heavy context-switching or support</td><td>4–5</td></tr></tbody></table></div>
+<p>These are planning ranges, not rules. Track a few real days and use your own average.</p>
+<h3 id="what-about-utilization">What about utilization?</h3>
+<p><b>Utilization</b> is the share of your workday you actually bill. If you work 8 clock hours but bill 6, your utilization that day is 75%.</p>
+<p>If your hourly rate is a floor worked out from your real billable hours (the way the <a href="/guides/how-to-calculate-freelance-hourly-rate/">floor-rate formula</a> does it), that rate already pays for the unbilled time. So hourly × your real billable hours (for example 6) gives a day rate that covers the whole day, unbilled time included. You don't need to add anything on top for admin.</p>
+<h2 id="worked-example-converting-hourly-to-day-rate">Worked example: converting hourly to day rate</h2>
+<p>Here's a made-up example. Jordan is a freelance strategist. Their target hourly rate is <b>$95</b>, worked out from the hours they really bill. On a typical client day they can honestly bill about <b>6 hours</b>.</p>
+<pre><code>Day rate = $95 × 6 = $570</code></pre>
+<p>So Jordan's day rate starts around <b>$570</b>.</p>
+<p>If they'd used 8 hours without thinking:</p>
+<pre><code>$95 × 8 = $760</code></pre>
+<p>That number assumes Jordan bills all 8 hours of every day. If the real average is 6, the $570 figure is the one that matches how their hourly rate was built. (If a client genuinely gets 8 hours of focused client work on a booked day, those hours are billable, and 8 is the right number to use.)</p>
+<h3 id="half-days-and-multi-day-blocks">Half-days and multi-day blocks</h3>
+<p>Common packaging once you have a day rate:</p>
+<ul><li><b>Half-day</b>: often day rate × 0.5, or slightly more than half if switching costs are high (some freelancers use 0.55–0.6).</li><li><b>3-day block</b>: day rate × 3, sometimes with a small multi-day discount if cash flow and scheduling make it worth it.</li><li><b>Weekly</b>: day rate × the number of days you're actually booking that week, not automatically × 5 if one day is travel or admin.</li></ul>
+<p>Discounts are optional. Never discount below your hourly floor × the hours you'll really bill.</p>
+<h2 id="common-mistakes-when-setting-a-day-rate">Common mistakes when setting a day rate</h2>
+<h3 id="using-hours-you-don-t-really-bill">Using hours you don't really bill</h3>
+<p>Treating every day as 8 billable hours when you usually bill 5 or 6 means your day rate no longer matches the hourly floor it came from. Build the day rate from hours you can actually charge for.</p>
+<h3 id="forgetting-tax-and-overhead">Forgetting tax and overhead</h3>
+<p>Your hourly rate should already include room for taxes, software, insurance, and other overhead. If you convert a "gut feel" hourly number that never included those, the day rate inherits the same hole. Work out a real floor first, then convert.</p>
+<h3 id="quoting-a-day-rate-for-work-that-isn-t-day-shaped">Quoting a day rate for work that isn't day-shaped</h3>
+<p>If the client needs scattered 45-minute check-ins all week, a day rate can feel unfair to them or unpaid to you. Use hourly (or a small retainer) for that shape of work.</p>
+<h3 id="underpricing-half-days">Underpricing half-days</h3>
+<p>A half-day still needs setup, context, and wind-down. Pricing it at exactly 50% of the day rate is fine for some work; for others, a slight premium on the half-day keeps you whole.</p>
+<h3 id="ignoring-travel-and-on-site-costs">Ignoring travel and on-site costs</h3>
+<p>If a "day" includes commute, parking, or gear haul, either bill those separately or bake a realistic buffer into the day rate for on-site work.</p>
+<h2 id="when-a-day-rate-beats-hourly">When a day rate beats hourly</h2>
+<p>A day rate often wins when:</p>
+<ul><li><b>The client wants budget certainty.</b> One number per day is easier to approve than an open timesheet.</li><li><b>You're faster than the estimate.</b> If you finish deep work in fewer hours, hourly would pay you less for the same outcome; a day rate pays for the day of capacity.</li><li><b>Scope is fuzzy but time-boxed.</b> "Two days of UX review" can be clearer than a task list you're still negotiating.</li><li><b>You're protecting focus.</b> Day-rate bookings encourage clients to batch work into real days instead of drip-feeding interruptions.</li></ul>
+<p>Hourly still wins when the work is short, interrupt-driven, or hard to fill a day with. There's no rule that you must pick only one forever.</p>
+<h2 id="quick-checklist-before-you-quote-a-day-rate">Quick checklist before you quote a day rate</h2>
+<ul><li>I know my hourly floor (or target) from real numbers, not a guess.</li><li>I've picked billable hours per day based on how I actually work.</li><li>Day rate = hourly × those billable hours.</li><li>Half-days and multi-day blocks still stay above my floor.</li><li>Tax set-aside and overhead are already in the hourly rate I started from.</li><li>The project is day-shaped enough that a day rate is fair to both sides.</li></ul>
+<h2 id="freelance-day-rate-faq">Freelance day rate FAQ</h2>
+<h3 id="how-do-i-convert-an-hourly-rate-to-a-day-rate">How do I convert an hourly rate to a day rate?</h3>
+<p>Multiply your hourly rate by the number of hours you can realistically bill in a day (often 5–7, not always 8). That product is your starting day rate. Adjust for half-days, on-site costs, and multi-day blocks as needed.</p>
+<h3 id="how-many-hours-are-in-a-freelance-day-rate">How many hours are in a freelance day rate?</h3>
+<p>Whatever you can honestly bill. Many freelancers plan on about 6 billable hours in an 8-hour workday. Use your own tracked average when you have it.</p>
+<h3 id="is-a-day-rate-better-than-hourly-for-freelancers">Is a day rate better than hourly for freelancers?</h3>
+<p>It depends on the work. Day rates suit full-day bookings and clients who want a simple daily number. Hourly suits short or uneven work. Lots of freelancers offer both.</p>
+<h3 id="should-my-day-rate-include-taxes">Should my day rate include taxes?</h3>
+<p>Indirectly, yes. Build taxes (and overhead) into your hourly floor first, then convert. A day rate converted from an hourly number that ignored taxes will undercharge every day. This is general planning info, not tax advice; check your own situation with a tax professional.</p>
+<h3 id="what-if-a-client-asks-for-a-weekly-rate">What if a client asks for a weekly rate?</h3>
+<p>Start from your day rate × the number of days you're actually committing that week. Only discount if the block is worth it for cash flow and scheduling, and never below your floor.</p>
+<section class="card" aria-labelledby="tools-h">
+<h2 id="tools-h">Free tools for this</h2>
+<ul class="links">
+<li><a href="/day-rate-calculator/">Free day rate calculator</a>: runs in your browser, nothing to download.</li>
+<li><a href="https://xvisionary1.gumroad.com/l/free-day-rate-calculator?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_day_rate">Day Rate Converter (offline file)</a>: the same converter as one HTML file.</li><li><a href="https://xvisionary1.gumroad.com/l/avrcl?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_day_rate">Freelance Rate Cheat Sheet</a>: the floor-rate formula on one printable page.</li>
+</ul>
+<p class="quiet">Prefer it ready-made? The paid <a href="https://xvisionary1.gumroad.com/l/rwowde?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_day_rate">Rate &amp; Quote Calculator</a> is a spreadsheet that builds day, week, and retainer packages from your floor rate.</p>
+</section>
+<p class="disclaimer">This guide is general information, not tax, legal, or financial advice. Pricing depends on your market and skills, and tax and payment rules vary by location and situation. Talk to a qualified professional about your own situation. Examples use made-up numbers.</p>
+<nav aria-labelledby="rel-h"><h2 id="rel-h">Related guides</h2><ul class="links"><li><a href="/guides/how-to-calculate-freelance-hourly-rate/">How to calculate your freelance hourly rate</a></li><li><a href="/guides/how-much-to-set-aside-for-taxes-freelance/">How much to set aside for taxes</a></li><li><a href="/guides/freelance-invoice-tracker-spreadsheet/">How to track freelance invoices</a></li></ul></nav>
+</article>
+
+</main>
+<footer class="site"><div class="in"><ul><li><a href="/freelance-rate-calculator/">Freelance floor-rate calculator</a></li><li><a href="/day-rate-calculator/">Day rate converter</a></li><li><a href="/tax-set-aside-calculator/">Tax set-aside calculator</a></li><li><a href="/guides/">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=footer&utm_campaign=site_footer" rel="noopener">Shop</a></li></ul><p>The calculators run entirely in your browser. Nothing you type is sent or saved anywhere. Everything here is for planning only and is not tax, legal, or financial advice.</p><p>© 2026 XVisionary</p></div></footer>
+
+</body>
+</html>

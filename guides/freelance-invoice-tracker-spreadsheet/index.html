@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freelance Invoice Tracker: How to Track Who Owes You</title>
+<meta name="description" content="How to track freelance invoices in a simple spreadsheet: the columns you need, a days-overdue formula, a follow-up schedule, and free reminder email scripts.">
+<link rel="canonical" href="https://xvisionxx-hue.github.io/guides/freelance-invoice-tracker-spreadsheet/">
+<meta property="og:site_name" content="XVisionary">
+<meta property="og:title" content="Freelance Invoice Tracker: How to Track Who Owes You">
+<meta property="og:description" content="How to track freelance invoices in a simple spreadsheet: the columns you need, a days-overdue formula, a follow-up schedule, and free reminder email scripts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://xvisionxx-hue.github.io/guides/freelance-invoice-tracker-spreadsheet/">
+<meta property="og:image" content="https://xvisionxx-hue.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XVisionary: free freelance money tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f3a5f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EXV%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#1b2430;--muted:#545f6e;--line:#dde3ec;--accent:#1f3a5f;--accent2:#2459b8;--good:#136f4b;--soft:#eef3fb;--radius:14px}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:var(--accent2)}a:hover{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:10}.skip:focus{left:8px;top:8px}
+.top{background:var(--accent);color:#fff}
+.top .in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:.01em}.brand:hover{color:#fff}
+.top nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 4px}
+.top nav a{color:#e6edf8;text-decoration:none;font-weight:600;font-size:.95rem;padding:6px 8px;border-radius:8px;display:inline-block}
+.top nav a:hover,.top nav a[aria-current=page]{background:rgba(255,255,255,.14);color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 40px}
+.crumbs{font-size:.85rem;color:var(--muted);margin:4px 0 0}.crumbs a{color:var(--muted)}
+header.page{padding:14px 0 4px}
+h1{font-size:1.7rem;line-height:1.2;margin:6px 0 10px;color:var(--accent)}
+h2{font-size:1.25rem;line-height:1.3;margin:28px 0 10px;color:var(--accent)}
+h3{font-size:1.05rem;margin:20px 0 6px}
+.card h2{margin-top:0;font-size:1.1rem}
+.sub{color:var(--muted);margin:0;font-size:1.05rem}
+.meta{color:var(--muted);font-size:.88rem;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:18px;box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.field{margin-bottom:16px}
+label{display:block;font-weight:600;margin-bottom:2px}
+.hint{display:block;font-size:.88rem;color:var(--muted);margin-bottom:6px}
+.opt{font-weight:400;color:var(--muted)}
+.inp{position:relative;display:flex;align-items:center}
+.inp span{position:absolute;color:var(--muted);font-weight:600;pointer-events:none}
+.inp .pre{left:12px}.inp .suf{right:12px}
+input[type=number]{width:100%;font-size:1.1rem;padding:12px 14px;border:1.5px solid #c9d2df;border-radius:10px;background:#fbfcfe;color:var(--ink);-moz-appearance:textfield;appearance:textfield}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input.has-pre{padding-left:28px}input.has-suf{padding-right:44px}
+input:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 0 3px rgba(36,89,184,.2)}
+input[aria-invalid=true]{border-color:#c62828}
+.err{color:#b71c1c;font-size:.88rem;min-height:1.2em;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr;gap:0}
+.results{display:grid;grid-template-columns:1fr;gap:12px}
+.res{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fbfcfe}
+.res .k{font-size:.9rem;color:var(--muted);font-weight:600}
+.res .v{font-size:1.85rem;font-weight:800;line-height:1.15;margin-top:2px;font-variant-numeric:tabular-nums}
+.res .n{font-size:.86rem;color:var(--muted);margin-top:2px}
+.res.main{border-color:var(--accent);background:var(--soft)}.res.main .v{color:var(--accent)}
+.res.g .v{color:var(--good)}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.92rem;color:var(--muted);margin-top:8px}
+.note b{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tbl{overflow-x:auto;margin:12px 0}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--soft);color:var(--accent)}
+.breakdown td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.breakdown tr.total td{border-bottom:none;font-weight:800;color:var(--accent)}
+.explain{color:var(--muted)}.explain b{color:var(--ink)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f3f8;border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:.92rem;line-height:1.45}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+p code,li code{background:#f0f3f8;padding:1px 5px;border-radius:5px}
+.reset{background:none;border:none;color:var(--accent2);font-size:.92rem;cursor:pointer;padding:4px 0;text-decoration:underline}
+.cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(20,30,50,.05)}
+.tile:hover{border-color:var(--accent2)}
+.tile b{display:block;color:var(--accent);font-size:1.05rem;margin-bottom:2px}
+.tile span{color:var(--muted);font-size:.93rem}
+ul.links{padding-left:20px;margin:8px 0}ul.links li{margin-bottom:6px}
+.callout{background:var(--soft);border-left:4px solid var(--accent);border-radius:8px;padding:12px 14px;margin:16px 0}
+.quiet{font-size:.92rem;color:var(--muted);margin-top:14px}
+.disclaimer{background:#eceff4;border-radius:10px;padding:12px 14px;font-size:.86rem;color:var(--muted);margin-top:18px}
+.faq h3{color:var(--ink)}
+article p,article li{max-width:68ch}
+footer.site{border-top:1px solid var(--line);margin-top:28px;background:#fff}
+footer.site .in{max-width:760px;margin:0 auto;padding:18px 16px 28px;font-size:.88rem;color:var(--muted)}
+footer.site ul{list-style:none;padding:0;margin:0 0 10px;display:flex;flex-wrap:wrap;gap:4px 16px}
+footer.site a{color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(min-width:600px){h1{font-size:2.05rem}.grid2{grid-template-columns:1fr 1fr;gap:16px}.results{grid-template-columns:1fr 1fr}.res.main{grid-column:1 / -1}.cards{grid-template-columns:1fr 1fr}.card{padding:22px}}
+@media print{.top,footer.site,.skip{display:none}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://xvisionxx-hue.github.io/#organization",
+   "name": "XVisionary",
+   "url": "https://xvisionxx-hue.github.io/",
+   "logo": "https://xvisionxx-hue.github.io/assets/xv-logo.png",
+   "sameAs": [
+    "https://xvisionary1.gumroad.com"
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://xvisionxx-hue.github.io/guides/freelance-invoice-tracker-spreadsheet/#article",
+   "headline": "How to Track Freelance Invoices (So Nobody Pays You Late Without You Noticing)",
+   "description": "How to track freelance invoices in a simple spreadsheet: the columns you need, a days-overdue formula, a follow-up schedule, and free reminder email scripts.",
+   "url": "https://xvisionxx-hue.github.io/guides/freelance-invoice-tracker-spreadsheet/",
+   "mainEntityOfPage": "https://xvisionxx-hue.github.io/guides/freelance-invoice-tracker-spreadsheet/",
+   "datePublished": "2026-10-13",
+   "dateModified": "2026-10-13",
+   "inLanguage": "en",
+   "image": "https://xvisionxx-hue.github.io/assets/og-image.png",
+   "author": {
+    "@id": "https://xvisionxx-hue.github.io/#organization"
+   },
+   "publisher": {
+    "@id": "https://xvisionxx-hue.github.io/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://xvisionxx-hue.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://xvisionxx-hue.github.io/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to track freelance invoices",
+     "item": "https://xvisionxx-hue.github.io/guides/freelance-invoice-tracker-spreadsheet/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://xvisionxx-hue.github.io/guides/freelance-invoice-tracker-spreadsheet/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is the best way to track freelance invoices?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For most freelancers, a spreadsheet is enough: one row per invoice with the client, invoice date, due date, amount billed, amount paid, balance due, and days overdue. Check it once a week. If you send dozens of invoices a month or need automatic reminders, dedicated invoicing software may be worth it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I track invoices in Google Sheets?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Google Sheets handles everything a basic invoice tracker needs: balance-due and days-overdue formulas, summary totals with SUM and SUMIF, and conditional formatting to highlight overdue invoices. The formulas in this article work in Google Sheets and, with fixed ranges, in Excel."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do I calculate how many days an invoice is overdue?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Subtract the due date from today's date, but only when there's still a balance and today is past the due date. In Google Sheets or Excel: =IF(AND(balance>0, TODAY()>due_date), TODAY()-due_date, 0), replacing balance and due_date with your cell references."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When should I follow up on an unpaid invoice?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A common approach is a friendly reminder just before the due date, a short follow-up 1 to 3 days after, another around a week late, and a firmer message (referencing your agreed terms) after about two weeks. Adjust the timing to your clients and keep a note of every reminder you send."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What payment terms should a freelancer use?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Net 14 and net 30 are both common, and some freelancers ask for payment on receipt or a deposit up front. Shorter terms usually mean you get paid sooner, but what works depends on your clients. Whatever you choose, agree on it before the work starts and print the actual due date on the invoice."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="in"><a class="brand" href="/">XVisionary</a><nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/#calculators">Calculators</a></li><li><a href="/guides/" aria-current="page">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=nav&utm_campaign=site_nav" rel="noopener">Shop</a></li></ul></nav></div></div>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb"><p class="crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a> › <span aria-current="page">How to track freelance invoices</span></p></nav>
+<article>
+<header class="page">
+<h1>How to Track Freelance Invoices (So Nobody Pays You Late Without You Noticing)</h1>
+<p class="meta">By XVisionary · Updated Oct 13, 2026 · About 6 min read</p>
+</header>
+<p class="callout"><a href="/freelance-rate-calculator/"><b>Free freelance rate calculator</b></a>: invoices only help if the rate behind them covers your costs.</p>
+<p>A <b>freelance invoice tracker</b> doesn't need to be accounting software. For most freelancers and side hustlers, a single spreadsheet with the right columns and one habit (checking it weekly) is enough to see who owes you, what's overdue, and how much you've actually collected. This guide shows the columns to use, a days-overdue formula you can paste into Google Sheets or Excel, and a simple follow-up schedule for late invoices.</p>
+<p>Late payments usually aren't dramatic. A client forgets, an invoice lands in the wrong inbox, or the person who approves payments is on vacation. The real problem is when <em>you</em> forget too, because the invoice only lived in your sent folder.</p>
+<h2 id="why-freelancers-need-an-invoice-tracker">Why freelancers need an invoice tracker</h2>
+<p>When you have two clients, you can keep it in your head. Around the fifth or sixth open invoice, things start to slip: you're not sure whether a partial payment covered the whole thing, or whether that "net 30" invoice is now 45 days old.</p>
+<p>A tracker gives you three answers at a glance:</p>
+<ol><li><b>Who owes you money right now</b> (and how much).</li><li><b>What's overdue</b>, and by how many days.</li><li><b>What you've billed versus collected</b> this month or year, which is the number that actually pays your rent.</li></ol>
+<p>It also makes tax time and budgeting easier, because every invoice and payment date is already in one place.</p>
+<h2 id="the-columns-your-freelance-invoice-tracker-needs">The columns your freelance invoice tracker needs</h2>
+<p>Start with one row per invoice and these columns:</p>
+<div class="tbl"><table><thead><tr><th scope="col">Column</th><th scope="col">What goes in it</th></tr></thead><tbody><tr><td>Invoice #</td><td>Your own numbering, e.g. 2026-014</td></tr><tr><td>Client</td><td>Use the same spelling every time so totals work</td></tr><tr><td>Project</td><td>Short description</td></tr><tr><td>Invoice date</td><td>The date you sent it</td></tr><tr><td>Due date</td><td>Invoice date + your payment terms</td></tr><tr><td>Amount billed</td><td>The invoice total</td></tr><tr><td>Amount paid</td><td>What's arrived so far (partial payments count)</td></tr><tr><td>Paid date</td><td>When the last payment landed</td></tr><tr><td>Balance due</td><td>Calculated: billed minus paid</td></tr><tr><td>Status</td><td>Unpaid / Partial / Paid / Void</td></tr><tr><td>Days overdue</td><td>Calculated (formula below)</td></tr></tbody></table></div>
+<p>That's it. You can add a notes column for things like "sent reminder Oct 3," which is surprisingly useful when you need to follow up a second time.</p>
+<h2 id="invoice-tracker-formulas-for-google-sheets-and-excel">Invoice tracker formulas for Google Sheets (and Excel)</h2>
+<p>Say your columns are laid out as A (Invoice #) through K (Days overdue), with data starting on row 2. These formulas go in row 2 and can be copied down.</p>
+<p><b>Balance due</b> (column I):</p>
+<pre><code>=IF(F2="", "", F2 - N(G2))</code></pre>
+<p><b>Status</b> (column J), if you want it calculated instead of picked from a dropdown:</p>
+<pre><code>=IF(F2="", "", IF(I2&lt;=0, "Paid", IF(N(G2)&gt;0, "Partial", "Unpaid")))</code></pre>
+<p><b>Days overdue</b> (column K):</p>
+<pre><code>=IF(AND(N(I2)&gt;0, E2&lt;&gt;"", TODAY()&gt;E2), TODAY()-E2, 0)</code></pre>
+<p>This returns 0 for anything paid or not yet due, and the number of days late for anything still open past its due date.</p>
+<p><b>Summary totals</b> (put these somewhere above or on a separate tab):</p>
+<pre><code>Total billed:      =SUM(F2:F)
+Total collected:   =SUM(G2:G)
+Outstanding:       =SUM(I2:I)
+Overdue balance:   =SUMIF(K2:K, "&gt;0", I2:I)
+Collection rate:   =IFERROR(SUM(G2:G) / SUM(F2:F), 0)</code></pre>
+<p>(In Excel, replace open ranges like <code>F2:F</code> with a fixed range such as <code>F2:F500</code>.)</p>
+<p>Add conditional formatting on the Days overdue column, for example red when it's above 0, and the overdue invoices will jump out every time you open the sheet.</p>
+<h2 id="a-worked-example-made-up-numbers">A worked example (made-up numbers)</h2>
+<p>Here's a made-up example to show how it reads. A freelance writer has four invoices open in October:</p>
+<ul><li>Invoice 2026-011: $600 billed, $600 paid. Balance $0, <b>Paid</b>.</li><li>Invoice 2026-012: $1,200 billed, $500 paid. Balance $700, <b>Partial</b>, not yet due.</li><li>Invoice 2026-013: $450 billed, $0 paid, due 12 days ago. Balance $450, <b>12 days overdue</b>.</li><li>Invoice 2026-014: $900 billed, $0 paid, due next week. Balance $900, <b>Unpaid</b>.</li></ul>
+<p>Totals: $3,150 billed, $1,100 collected, $2,050 outstanding, $450 overdue. Without the sheet, the 12-day-old invoice is the one that quietly turns into 40 days.</p>
+<h2 id="a-simple-follow-up-schedule-for-overdue-invoices">A simple follow-up schedule for overdue invoices</h2>
+<p>The tracker tells you <em>when</em> to follow up. Here's a polite, plain schedule many freelancers use as a starting point:</p>
+<ul><li><b>A few days before the due date:</b> a friendly heads-up ("Just a reminder that invoice 2026-013 is due Friday").</li><li><b>1 to 3 days overdue:</b> a short note with the invoice attached again. Most late payments are simple oversights.</li><li><b>About 7 days overdue:</b> follow up again and ask whether anything is holding it up (wrong contact, missing PO number, etc.).</li><li><b>14+ days overdue:</b> a firmer message that references your agreed terms, and consider pausing new work until the balance is cleared.</li></ul>
+<p>Log each reminder in the notes column so you're never guessing whether you already sent one.</p>
+<h2 id="ways-to-reduce-late-payments-before-they-happen">Ways to reduce late payments before they happen</h2>
+<p>A tracker catches late invoices. These habits help prevent them:</p>
+<ul><li><b>Put clear terms on every invoice:</b> the due date (not just "net 30"), the amount, and how to pay.</li><li><b>Agree on payment terms before you start</b>, ideally in writing, so the invoice isn't the first time the client hears about them.</li><li><b>Ask for a deposit on larger projects.</b> Many freelancers take part of the fee up front.</li><li><b>Invoice promptly.</b> An invoice sent the day work is delivered tends to get paid sooner than one sent three weeks later.</li><li><b>Late fees are an option, not a default.</b> If you want to charge them, put them in your agreement up front, and check what's allowed where you and your client are located.</li></ul>
+<h2 id="freelance-invoice-tracker-faq">Freelance invoice tracker FAQ</h2>
+<h3 id="what-is-the-best-way-to-track-freelance-invoices">What is the best way to track freelance invoices?</h3>
+<p>For most freelancers, a spreadsheet is enough: one row per invoice with the client, invoice date, due date, amount billed, amount paid, balance due, and days overdue. Check it once a week. If you send dozens of invoices a month or need automatic reminders, dedicated invoicing software may be worth it.</p>
+<h3 id="can-i-track-invoices-in-google-sheets">Can I track invoices in Google Sheets?</h3>
+<p>Yes. Google Sheets handles everything a basic invoice tracker needs: balance-due and days-overdue formulas, summary totals with SUM and SUMIF, and conditional formatting to highlight overdue invoices. The formulas in this article work in Google Sheets and, with fixed ranges, in Excel.</p>
+<h3 id="how-do-i-calculate-how-many-days-an-invoice-is-overdue">How do I calculate how many days an invoice is overdue?</h3>
+<p>Subtract the due date from today's date, but only when there's still a balance and today is past the due date. In Google Sheets or Excel: <code>=IF(AND(balance&gt;0, TODAY()&gt;due_date), TODAY()-due_date, 0)</code>, replacing balance and due_date with your cell references.</p>
+<h3 id="when-should-i-follow-up-on-an-unpaid-invoice">When should I follow up on an unpaid invoice?</h3>
+<p>A common approach is a friendly reminder just before the due date, a short follow-up 1 to 3 days after, another around a week late, and a firmer message (referencing your agreed terms) after about two weeks. Adjust the timing to your clients and keep a note of every reminder you send.</p>
+<h3 id="what-payment-terms-should-a-freelancer-use">What payment terms should a freelancer use?</h3>
+<p>Net 14 and net 30 are both common, and some freelancers ask for payment on receipt or a deposit up front. Shorter terms usually mean you get paid sooner, but what works depends on your clients. Whatever you choose, agree on it before the work starts and print the actual due date on the invoice.</p>
+<section class="card" aria-labelledby="tools-h">
+<h2 id="tools-h">Free tools for this</h2>
+<ul class="links">
+<li><a href="/freelance-rate-calculator/">Free freelance rate calculator</a>: runs in your browser, nothing to download.</li>
+<li><a href="https://xvisionary1.gumroad.com/l/free-late-payment-emails?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_invoice_tracker">Late Payment Email Scripts</a>: four polite-to-firm invoice reminders.</li><li><a href="https://xvisionary1.gumroad.com/l/avrcl?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_invoice_tracker">Freelance Rate Cheat Sheet</a>: the floor-rate formula on one printable page.</li>
+</ul>
+<p class="quiet">Prefer it ready-made? The paid <a href="https://xvisionary1.gumroad.com/l/qkgkbu?utm_source=xv_site&utm_medium=guide&utm_campaign=guide_invoice_tracker">Invoice &amp; Payment Tracker</a> is a ready-made spreadsheet with these formulas, a status dropdown, and a totals dashboard.</p>
+</section>
+<p class="disclaimer">This guide is general information, not tax, legal, or financial advice. Pricing depends on your market and skills, and tax and payment rules vary by location and situation. Talk to a qualified professional about your own situation. Examples use made-up numbers.</p>
+<nav aria-labelledby="rel-h"><h2 id="rel-h">Related guides</h2><ul class="links"><li><a href="/guides/how-to-calculate-freelance-hourly-rate/">How to calculate your freelance hourly rate</a></li><li><a href="/guides/day-rate-vs-hourly-rate-freelancers/">Day rate vs hourly rate</a></li><li><a href="/guides/how-much-to-set-aside-for-taxes-freelance/">How much to set aside for taxes</a></li></ul></nav>
+</article>
+
+</main>
+<footer class="site"><div class="in"><ul><li><a href="/freelance-rate-calculator/">Freelance floor-rate calculator</a></li><li><a href="/day-rate-calculator/">Day rate converter</a></li><li><a href="/tax-set-aside-calculator/">Tax set-aside calculator</a></li><li><a href="/guides/">Guides</a></li><li><a href="https://xvisionary1.gumroad.com/?utm_source=xv_site&utm_medium=footer&utm_campaign=site_footer" rel="noopener">Shop</a></li></ul><p>The calculators run entirely in your browser. Nothing you type is sent or saved anywhere. Everything here is for planning only and is not tax, legal, or financial advice.</p><p>© 2026 XVisionary</p></div></footer>
+
+</body>
+</html>
